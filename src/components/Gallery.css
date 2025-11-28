@@ -7,7 +7,7 @@
   margin: 0 auto;
 }
 
-/* 顶部 */
+/* 顶部 Header 保持不变 */
 .gallery-header {
   text-align: center;
   margin-bottom: 50px;
@@ -37,36 +37,69 @@
   box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 
-/* 网格布局 */
+/* --- 核心修改：瀑布流布局 --- */
 .gallery-grid {
-  display: grid;
-  /* 自适应列宽：每列最小 300px */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 30px;
+  /* 这里的核心是用 column-count 代替 grid */
+  column-count: 3;  /* 桌面端显示 3 列 */
+  column-gap: 20px; /* 列之间的间距 */
+  
+  /* 防止顶部留白问题 */
+  width: 100%;
 }
 
 /* 单个卡片容器 */
 .gallery-item {
+  /* 关键属性：防止卡片被从中间切断到下一列 */
+  break-inside: avoid; 
+  
   background: white;
-  padding: 15px;
-  border-radius: 24px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
+  padding: 10px;      /* 这种窄边距更像拍立得 */
+  padding-bottom: 15px; /* 底部稍微留多一点 */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  margin-bottom: 20px; /* 每个卡片上下的间距 */
+  
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+  /* 修复 Webkit 浏览器可能出现的渲染bug */
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
 }
 
 .gallery-item:hover {
   transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
 /* 复用 LivePhoto 样式 */
 .gallery-live-photo {
   width: 100%;
-  aspect-ratio: 3 / 4; /* 默认竖屏 */
-  border-radius: 16px;
-  border: 2px solid #ffe8cc;
+  
+  /* 注意：这里保留默认 3/4 是为了防止加载时高度塌陷。
+     如果你希望每一张照片都按自己的原始比例显示（不裁剪），
+     你需要去修改 LivePhoto.js 或者在 JSON 里记录比例。
+     目前为了整齐，我们先保持统一样式。
+  */
+  /* aspect-ratio: 3 / 4;  */
+  
+  border-radius: 8px; /* 图片圆角稍微小一点 */
   overflow: hidden;
   cursor: pointer;
   display: block;
+  background-color: #f0f0f0; /* 加载前的占位背景色 */
+}
+
+/* 响应式：屏幕变窄时减少列数 */
+@media (max-width: 900px) {
+  .gallery-grid {
+    column-count: 2; /* 平板显示 2 列 */
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    column-count: 1; /* 手机显示 1 列 */
+  }
 }
 
 .empty-state {

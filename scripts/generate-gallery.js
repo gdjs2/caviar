@@ -2,6 +2,8 @@
 
 const fs = require('fs');
 const path = require('path');
+// 👇 1. 引入 image-size 库
+const { imageSize } = require('image-size')
 
 // 配置路径
 const IMAGES_DIR = path.join(__dirname, '../public/images/gallery');
@@ -21,6 +23,8 @@ try {
   const files = fs.readdirSync(IMAGES_DIR);
   const galleryItems = [];
 
+  console.log('🔍 开始扫描图片尺寸...');
+
   // 2. 遍历文件，寻找配对
   files.forEach(file => {
     const ext = path.extname(file);
@@ -29,24 +33,34 @@ try {
     // 如果是图片文件
     if (IMAGE_EXTS.includes(ext)) {
       // 检查是否存在对应的视频文件
-      const hasVideo = VIDEO_EXTS.some(videoExt => 
-        files.includes(name + videoExt)
+      // 稍微优化了一下查找逻辑，处理 .mov 和 .MOV 大小写问题
+      const videoFile = files.find(f => 
+        f === name + '.mov' || f === name + '.MOV'
       );
 
-      if (hasVideo) {
-        // 找到一对！添加到列表
-        // 注意：这里我们存文件名，不存完整路径，路径在 React 里拼
+      if (videoFile) {
+        // 👇 2. 获取图片宽高
+        const buffer = fs.readFileSync(path.join(IMAGES_DIR, file));
+        const dimensions = imageSize(buffer);
+
+        console.log(`✅ 发现 Live Photo: ${name} (宽: ${dimensions.width}, 高: ${dimensions.height})`);
+
+        // 3. 添加到列表
         galleryItems.push({
           id: name,
           image: file,
-          video: name + (files.find(f => f === name + '.mov' || f === name + '.MOV') ? path.extname(files.find(f => f === name + '.mov' || f === name + '.MOV')) : '.mov')
+          video: videoFile,
+          // 👇 保存宽高数据
+          width: dimensions.width,
+          height: dimensions.height,
+          // 预计算宽高比 (例如 0.75)，保留 4 位小数
+          aspectRatio: dimensions.height ? Number((dimensions.width / dimensions.height).toFixed(4)) : 0
         });
       }
     }
   });
 
-  // 3. 写入 JSON
-  // 确保输出目录存在
+  // 4. 写入 JSON
   const outputDir = path.dirname(OUTPUT_FILE);
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir, { recursive: true });

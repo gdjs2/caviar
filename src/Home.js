@@ -37,6 +37,7 @@ function Home({ lang, setLang }) {
           photoSrc={process.env.PUBLIC_URL + "/images/Homepage.jpeg"}
           videoSrc={process.env.PUBLIC_URL + "/images/Homepage.MOV"}
           className="my-live-photo"
+          aspectRatio={3 / 4}
         />
         {/* <img src={process.env.PUBLIC_URL + "/images/Homepage.jpeg"} alt="Cavyy" /> */}
       </div>
