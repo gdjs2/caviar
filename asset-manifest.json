@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/cavior/static/css/main.018af3fb.css",
+    "main.js": "/cavior/static/js/main.d3bc13b1.js",
+    "static/js/453.d4383d6d.chunk.js": "/cavior/static/js/453.d4383d6d.chunk.js",
+    "index.html": "/cavior/index.html",
+    "main.018af3fb.css.map": "/cavior/static/css/main.018af3fb.css.map",
+    "main.d3bc13b1.js.map": "/cavior/static/js/main.d3bc13b1.js.map",
+    "453.d4383d6d.chunk.js.map": "/cavior/static/js/453.d4383d6d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.018af3fb.css",
+    "static/js/main.d3bc13b1.js"
+  ]
+}
