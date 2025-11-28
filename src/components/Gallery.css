@@ -1,0 +1,76 @@
+/* src/components/Gallery.css */
+
+.gallery-page {
+  min-height: 100vh;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 顶部 */
+.gallery-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.gallery-header h1 {
+  font-size: 2.2rem;
+  color: #FF8C42;
+  margin-top: 20px;
+}
+
+.back-link {
+  display: inline-block;
+  padding: 8px 20px;
+  background: white;
+  color: #333;
+  text-decoration: none;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: all 0.2s;
+}
+
+.back-link:hover {
+  transform: translateY(-2px);
+  color: #FF8C42;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+/* 网格布局 */
+.gallery-grid {
+  display: grid;
+  /* 自适应列宽：每列最小 300px */
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+/* 单个卡片容器 */
+.gallery-item {
+  background: white;
+  padding: 15px;
+  border-radius: 24px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+}
+
+/* 复用 LivePhoto 样式 */
+.gallery-live-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4; /* 默认竖屏 */
+  border-radius: 16px;
+  border: 2px solid #ffe8cc;
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
+}
+
+.empty-state {
+  text-align: center;
+  color: #999;
+  margin-top: 50px;
+}

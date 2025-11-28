@@ -136,26 +136,22 @@ a:hover {
   justify-content: center; /* 确保照片在格子里居中 */
 }
 
-.area-photo img {
-  width: 100%;
-  height: auto;
+.my-live-photo {
   border-radius: 20px;
   border: 4px solid #f8c27a;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-  object-fit: cover;
-  transition: transform 0.3s ease;
-}
+  
+  overflow: hidden;
+  cursor: pointer;
+  display: block;
 
-.area-photo img:hover {
-  transform: scale(1.02); /* 鼠标悬停微微放大 */
+  position: sticky; 
 }
-
 /* =========================================
    5. 语言切换器
    ========================================= */
 .lang-switcher {
   position: fixed;
-  top: 20px;
+  bottom: 20px;
   right: 20px;
   z-index: 999;
   background: rgba(255, 255, 255, 0.8); /* 半透明背景，防遮挡 */
@@ -225,7 +221,7 @@ a:hover {
   }
   
   .lang-switcher {
-    top: 15px;
+    bottom: 15px;
     right: 15px;
   }
 }
