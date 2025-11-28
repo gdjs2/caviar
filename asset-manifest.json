@@ -1,15 +1,13 @@
 {
   "files": {
-    "main.css": "/caviar/static/css/main.f74fb5b5.css",
-    "main.js": "/caviar/static/js/main.f690f6b1.js",
-    "static/js/453.d4383d6d.chunk.js": "/caviar/static/js/453.d4383d6d.chunk.js",
+    "main.css": "/caviar/static/css/main.22cd0a1b.css",
+    "main.js": "/caviar/static/js/main.38b6a5b2.js",
     "index.html": "/caviar/index.html",
-    "main.f74fb5b5.css.map": "/caviar/static/css/main.f74fb5b5.css.map",
-    "main.f690f6b1.js.map": "/caviar/static/js/main.f690f6b1.js.map",
-    "453.d4383d6d.chunk.js.map": "/caviar/static/js/453.d4383d6d.chunk.js.map"
+    "main.22cd0a1b.css.map": "/caviar/static/css/main.22cd0a1b.css.map",
+    "main.38b6a5b2.js.map": "/caviar/static/js/main.38b6a5b2.js.map"
   },
   "entrypoints": [
-    "static/css/main.f74fb5b5.css",
-    "static/js/main.f690f6b1.js"
+    "static/css/main.22cd0a1b.css",
+    "static/js/main.38b6a5b2.js"
   ]
 }
