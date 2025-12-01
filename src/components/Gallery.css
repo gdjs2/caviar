@@ -37,33 +37,39 @@
   box-shadow: 0 6px 15px rgba(0,0,0,0.12);
 }
 
-/* --- 核心修改：瀑布流布局 --- */
 .gallery-grid {
-  /* 这里的核心是用 column-count 代替 grid */
-  column-count: 3;  /* 桌面端显示 3 列 */
-  column-gap: 20px; /* 列之间的间距 */
-  
-  /* 防止顶部留白问题 */
+  /* 使用 Flexbox 作为列的容器 */
+  display: flex;
+  gap: 20px; /* 列之间的间距 */
+  align-items: flex-start; /* 确保列从顶部开始对齐 */
   width: 100%;
 }
 
-/* 单个卡片容器 */
+/* 瀑布流的每一列 (由 JS 渲染) */
+.masonry-column {
+  /* 确保每列宽度相同 */
+  flex-basis: 0;
+  flex-grow: 1;
+  /* 保证每列内的照片向下堆叠 */
+  display: flex;
+  flex-direction: column;
+  /* 照片之间的垂直间距由 .gallery-item 的 margin-bottom 控制 */
+  gap: 0; 
+}
+
+/* 单个卡片容器 (保持不变，但其 margin-bottom 现在控制列内间距) */
 .gallery-item {
-  /* 关键属性：防止卡片被从中间切断到下一列 */
-  break-inside: avoid; 
+  /* 移除 break-inside 相关的属性，它们不再需要 */
+  /* break-inside: avoid; */
   
   background: white;
-  padding: 10px;      /* 这种窄边距更像拍立得 */
-  padding-bottom: 15px; /* 底部稍微留多一点 */
+  padding: 10px;      
+  padding-bottom: 15px; 
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  margin-bottom: 20px; /* 每个卡片上下的间距 */
+  margin-bottom: 20px; /* 关键：每个卡片上下的间距 */
   
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-  /* 修复 Webkit 浏览器可能出现的渲染bug */
-  -webkit-column-break-inside: avoid;
-  page-break-inside: avoid;
 }
 
 .gallery-item:hover {
