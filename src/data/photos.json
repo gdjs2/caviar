@@ -86,5 +86,125 @@
     "width": 3689,
     "height": 4919,
     "aspectRatio": 0.7499
+  },
+  {
+    "id": "IMG_1077",
+    "image": "IMG_1077.jpeg",
+    "video": "IMG_1077.mov",
+    "width": 2048,
+    "height": 2048,
+    "aspectRatio": 1
+  },
+  {
+    "id": "IMG_1080",
+    "image": "IMG_1080.jpeg",
+    "video": "IMG_1080.mov",
+    "width": 1536,
+    "height": 2048,
+    "aspectRatio": 0.75
+  },
+  {
+    "id": "IMG_1104",
+    "image": "IMG_1104.jpeg",
+    "video": "IMG_1104.mov",
+    "width": 1536,
+    "height": 2048,
+    "aspectRatio": 0.75
+  },
+  {
+    "id": "IMG_1316",
+    "image": "IMG_1316.jpeg",
+    "video": "IMG_1316.mov",
+    "width": 2048,
+    "height": 2048,
+    "aspectRatio": 1
+  },
+  {
+    "id": "IMG_1404",
+    "image": "IMG_1404.jpeg",
+    "video": "IMG_1404.mov",
+    "width": 1536,
+    "height": 2048,
+    "aspectRatio": 0.75
+  },
+  {
+    "id": "IMG_1451",
+    "image": "IMG_1451.jpeg",
+    "video": "IMG_1451.mov",
+    "width": 1536,
+    "height": 2048,
+    "aspectRatio": 0.75
+  },
+  {
+    "id": "IMG_1568",
+    "image": "IMG_1568.jpeg",
+    "video": "IMG_1568.mov",
+    "width": 1536,
+    "height": 2048,
+    "aspectRatio": 0.75
+  },
+  {
+    "id": "IMG_1902",
+    "image": "IMG_1902.jpeg",
+    "video": "IMG_1902.mov",
+    "width": 1536,
+    "height": 2048,
+    "aspectRatio": 0.75
+  },
+  {
+    "id": "IMG_1988",
+    "image": "IMG_1988.jpeg",
+    "video": "IMG_1988.mov",
+    "width": 2048,
+    "height": 2048,
+    "aspectRatio": 1
+  },
+  {
+    "id": "IMG_2628",
+    "image": "IMG_2628.jpeg",
+    "video": "IMG_2628.mov",
+    "width": 2048,
+    "height": 2048,
+    "aspectRatio": 1
+  },
+  {
+    "id": "IMG_2632",
+    "image": "IMG_2632.jpeg",
+    "video": "IMG_2632.mov",
+    "width": 1536,
+    "height": 2048,
+    "aspectRatio": 0.75
+  },
+  {
+    "id": "IMG_2938",
+    "image": "IMG_2938.jpeg",
+    "video": "IMG_2938.mov",
+    "width": 1536,
+    "height": 2048,
+    "aspectRatio": 0.75
+  },
+  {
+    "id": "IMG_3505",
+    "image": "IMG_3505.jpeg",
+    "video": "IMG_3505.mov",
+    "width": 1536,
+    "height": 2048,
+    "aspectRatio": 0.75
+  },
+  {
+    "id": "IMG_4286",
+    "image": "IMG_4286.jpeg",
+    "video": "IMG_4286.mov",
+    "width": 2048,
+    "height": 1536,
+    "aspectRatio": 1.3333
+  },
+  {
+    "id": "IMG_4414",
+    "image": "IMG_4414.jpeg",
+    "video": "IMG_4414.mov",
+    "width": 1536,
+    "height": 2048,
+    "aspectRatio": 0.75
   }
 ]
